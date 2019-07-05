@@ -19,5 +19,5 @@
     <string name="returnvaluefail">return value fail</string>
     <string name="returnsuccess">success</string>
     <string name="putmoreinput">회차를 입력해 주세요</string>
-    <string name="numfrequency">번호별 출현 횟수</string>
+    <string name="numfrequency">번호별 출현 횟수 (1~50회차)</string>
 </resources>

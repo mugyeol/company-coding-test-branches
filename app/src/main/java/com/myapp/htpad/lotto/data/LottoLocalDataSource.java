@@ -35,7 +35,7 @@ public class LottoLocalDataSource implements LottoDataSource {
     @Override
     public void getLottos(LoadDataCallback callback) {
         Runnable runnable = () -> {
-            List<LottoModel> lotto =  mLottoDao.getLotto();
+            List<LottoModel> lotto =  mLottoDao.getLottos();
             if (lotto.isEmpty()){
                 callback.onFail();
             }else{
@@ -51,5 +51,19 @@ public class LottoLocalDataSource implements LottoDataSource {
     public synchronized void insertLotto(LottoModel lottoModel) {
        Runnable saveRunnable = () -> mLottoDao.insertLotto(lottoModel);
         new Thread(saveRunnable).start();
+    }
+
+    @Override
+    public synchronized void countNums(int i, GetNumCallback callback) {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                int sum =  mLottoDao.countNum(i);
+                FrequencyModel frequencyModel = new FrequencyModel(i,sum);
+                callback.onCounted(frequencyModel);
+            }
+        };
+            new Thread(runnable).start();
+
     }
 }

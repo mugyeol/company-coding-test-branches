@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.myapp.htpad.lotto.R;
 import com.myapp.htpad.lotto.view.lottohistory.LottoHistoryActivity;
+import com.myapp.htpad.lotto.view.numfrequency.NumFrequencyActivity;
 
 import java.util.ArrayList;
 
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         mPresenter = new MainActivityPresenter();
         mPresenter.attachView(this);
         mLinearNum.setVisibility(View.INVISIBLE);
+        mCheckButton.setVisibility(View.INVISIBLE);
 
 
 
@@ -53,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
 
     @OnClick(R.id.MainActivityCreateBtn)
     void createNum(){
-        Log.d(TAG," BUTTON CLICK ");
         String num = mEdittext.getText().toString();
         mPresenter.createNum(num);
         mEdittext.setText("");
@@ -67,30 +68,31 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     void checkWinning(){
         mPresenter.checkIfWin(recentSearchNum,mNumset);
     }
+
     @OnClick(R.id.MainActivityNumFrequency)
     void checkFrequency(){
-
+        startActivity(new Intent(this,NumFrequencyActivity.class));
     }
 
 
     @Override
     public void onCreatedNum(ArrayList<Integer> arrayList, String num) {
-        Log.d(TAG,""+arrayList.toString());
         for (int i=0; i<arrayList.size(); i++){
              TextView textView =  (TextView) findViewById(mResourceSet[i]);
              textView.setText(String.valueOf(arrayList.get(i)));
              textView.setBackground(getDrawable(R.drawable.round));
-             textView.setTextColor(getColor(R.color.colorWhite));
         }
 
         //당첨인지 확인 할 때 사용할 param
         mNumset = arrayList;
         recentSearchNum = Integer.parseInt(num);
-        String numStr = num+getString(R.string.checkNlotto);
 
+
+        String numStr = num+getString(R.string.checkNlotto);
         mCheckButton.setText(numStr);
 
         mLinearNum.setVisibility(View.VISIBLE);
+        mCheckButton.setVisibility(View.VISIBLE);
 
 
 

@@ -13,11 +13,12 @@ public interface LottoDao {
 
 
     @Query("SELECT * FROM lotto ORDER BY drwNo")
-    List<LottoModel> getLotto();
+    List<LottoModel> getLottos();
 
 
-    @Query("SELECT COUNT(*) FROM lotto WHERE drwtNo1 OR drwtNo2 OR drwtNo3 OR drwtNo4 OR drwtNo5 OR drwtNo6 OR bnusNo = :no")
-    int getLottoByNo(String no);
+    @Query("SELECT COUNT(id) FROM lotto WHERE drwtNo1 =:num OR drwtNo2 =:num " +
+            "OR drwtNo3=:num OR drwtNo4=:num OR drwtNo5=:num OR drwtNo6=:num OR bnusNo= :num")
+    int countNum(int num);
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

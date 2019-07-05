@@ -8,10 +8,13 @@ public interface LottoDataSource {
         void onDataLoaded(List<LottoModel> lottoModels);
         void onFail();
     }
+    interface GetNumCallback{
+        void onCounted(FrequencyModel frequencyModel);
+    }
 
     void getLottos(LoadDataCallback callback);
     void insertLotto(LottoModel lottoModel);
-
+    void countNums (int i, GetNumCallback callback);
 
 
 

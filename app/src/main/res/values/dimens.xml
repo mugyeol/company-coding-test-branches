@@ -4,7 +4,8 @@
     <dimen name="titleTextSize">30sp</dimen>
     <dimen name="mainbtnmargin">20dp</dimen>
     <dimen name="numWidthHeight">38dp</dimen>
-    <dimen name="numWidthHeight2">34dp</dimen>
+    <dimen name="numWidthHeight2">31dp</dimen>
+    <dimen name="numWidthHeight3">42dp</dimen>
     <dimen name="numMargin">6dp</dimen>
     <dimen name="plusSize">30sp</dimen>
     <dimen name="splashWelcomeTitleSize">60sp</dimen>

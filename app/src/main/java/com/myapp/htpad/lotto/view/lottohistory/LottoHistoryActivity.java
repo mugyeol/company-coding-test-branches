@@ -27,7 +27,6 @@ public class LottoHistoryActivity extends AppCompatActivity {
     @BindView(R.id.lottohistoryTextview)TextView title;
 
     private Adapter mAdapter;
-    private List<LottoModel> arrayList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +34,7 @@ public class LottoHistoryActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new Adapter(this,arrayList);
+        mAdapter = new Adapter(this);
         recyclerView.setAdapter(mAdapter);
 
 
@@ -66,11 +65,11 @@ public class LottoHistoryActivity extends AppCompatActivity {
 
     public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-        private List<LottoModel> mArraylist;
+        private List<LottoModel> mArraylist = new ArrayList<>();
         private Activity mActivity;
-        Adapter (Activity activity, List<LottoModel> arrayList){
+        Adapter (Activity activity){
             mActivity = activity;
-            mArraylist = arrayList;
+
         }
 
         @NonNull

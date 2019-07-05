@@ -19,7 +19,6 @@
                 android:textColor="@color/colorWhite"
                 android:id="@+id/itemnum1"
                 android:gravity="center"
-                android:layout_marginStart="@dimen/numMargin"
                 android:layout_width="@dimen/numWidthHeight2"
                 android:layout_height="@dimen/numWidthHeight2"
                 />

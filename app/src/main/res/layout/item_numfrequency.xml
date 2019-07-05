@@ -2,24 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="15dp"
+    android:padding="17dp"
     android:layout_height="wrap_content">
 
-
-
-    <!--//회차-->
     <TextView
-
+        android:id="@+id/numfrequencyNum"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:gravity="center"
         android:textSize="18sp"
-        android:id="@+id/numfrequencyNum"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/colorWhite"
+        android:layout_width="@dimen/numWidthHeight3"
+        android:layout_height="@dimen/numWidthHeight3" />
 
     <View
-        android:layout_marginLeft="60dp"
+        android:id="@+id/numfrequencyView"
+        android:layout_marginStart="60dp"
+
         app:layout_constraintTop_toTopOf="@id/numfrequencyNum"
         app:layout_constraintBottom_toBottomOf="@id/numfrequencyNum"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -27,18 +26,18 @@
         android:layout_height="13dp"
         android:layout_width="200dp"
 
-        android:id="@+id/numfrequencyView"
 
         />
     <TextView
-        android:layout_marginLeft="20dp"
+        android:id="@+id/numFrequencyCounting"
+        android:layout_marginStart="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/numfrequencyView"
         android:gravity="center"
         android:textSize="18sp"
-        android:text="sdf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="42dp"
+        android:layout_height="42dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

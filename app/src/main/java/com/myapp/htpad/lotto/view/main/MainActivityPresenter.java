@@ -76,15 +76,24 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
                 if (response.body()!=null){
                     if (response.body().getReturnValue().equals(mView.getContext().getString(R.string.returnsuccess))){
                         LottoModel lottoModel = response.body();
+                        int num1 = lottoModel.getDrwtNo1();
+                        int num2 = lottoModel.getDrwtNo2();
+                        int num3 = lottoModel.getDrwtNo3();
+                        int num4 = lottoModel.getDrwtNo4();
+                        int num5 = lottoModel.getDrwtNo5();
+                        int num6 = lottoModel.getDrwtNo6();
+                        int bnus = lottoModel.getBnusNo();
+                        String dot = ", ";
+                        String winNum = num1+dot+num2+dot+num3+dot+num4+dot+num5+dot+num6+" + "+bnus+"(보너스) \r\n입니다";
                         //TODO 1-5등 예외처리
-                        if (getneratedNums.get(0)==lottoModel.getDrwtNo1() && getneratedNums.get(1)==lottoModel.getDrwtNo2()
-                                && getneratedNums.get(2)==lottoModel.getDrwtNo3() && getneratedNums.get(1)==lottoModel.getDrwtNo4()
-                                && getneratedNums.get(4)==lottoModel.getDrwtNo5() && getneratedNums.get(1)==lottoModel.getDrwtNo6()
-                                && getneratedNums.get(6)==lottoModel.getBnusNo()
+                        if (getneratedNums.get(0)==num1 && getneratedNums.get(1)==num2
+                                && getneratedNums.get(2)==num3 && getneratedNums.get(3)==num4
+                                && getneratedNums.get(4)==num5 && getneratedNums.get(5)==num6
+                                && getneratedNums.get(6)==bnus
                                 ){
-                            mView.showDialog("1등 당첨 되셨습니다.","당첨번호는 ");
+                            mView.showDialog("1등 당첨 되셨습니다.","당첨번호는 "+"\r\n"+winNum);
                         }else{
-                            mView.showDialog("당첨 되지 않으셨습니다","당첨번호는 ");
+                            mView.showDialog("당첨 되지 않으셨습니다","당첨번호는 "+"\r\n"+winNum);
                         }
 
 

@@ -21,7 +21,23 @@
         </activity>
         <activity android:name=".view.welcome.WelcomeActivity" />
         <activity android:name=".view.lottohistory.LottoHistoryActivity" />
-        <activity android:name=".view.numfrequency.NumFrequencyActivity"></activity>
+        <activity android:name=".view.numfrequency.NumFrequencyActivity" />
+        <activity android:name=".view.winningnumber.WinningNumber">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="myhost"
+                     android:scheme="myscheme" />
+
+
+            </intent-filter>
+
+
+        </activity>
     </application>
 
 </manifest>
