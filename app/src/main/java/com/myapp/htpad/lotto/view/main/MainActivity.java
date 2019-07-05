@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     @BindView(R.id.MainActivityEditText) EditText mEdittext;
     @BindView(R.id.MainActivityCheckBbtn) Button mCheckButton;
     @BindView(R.id.MainActivityCheckHistory)Button mHistoryButton;
+    @BindView(R.id.MainActivityNumFrequency)Button mFrequencyBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,21 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         mCheckButton.setVisibility(View.INVISIBLE);
 
 
+        mFrequencyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFrequencyBtn.setClickable(false);
+                startActivity(new Intent(MainActivity.this,NumFrequencyActivity.class));
+            }
+        });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG+"LIFECYCLE","ON RESUME");
+        mFrequencyBtn.setClickable(true);
     }
 
     @OnClick(R.id.MainActivityCreateBtn)
@@ -69,10 +84,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         mPresenter.checkIfWin(recentSearchNum,mNumset);
     }
 
-    @OnClick(R.id.MainActivityNumFrequency)
-    void checkFrequency(){
-        startActivity(new Intent(this,NumFrequencyActivity.class));
-    }
 
 
     @Override
@@ -85,7 +96,13 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
 
         //당첨인지 확인 할 때 사용할 param
         mNumset = arrayList;
-        recentSearchNum = Integer.parseInt(num);
+        try {
+            recentSearchNum = Integer.parseInt(num);
+
+        }catch (NumberFormatException e){
+
+            recentSearchNum=0;
+        }
 
 
         String numStr = num+getString(R.string.checkNlotto);

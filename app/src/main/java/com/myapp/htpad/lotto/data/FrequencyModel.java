@@ -1,6 +1,6 @@
 package com.myapp.htpad.lotto.data;
 
-public class FrequencyModel {
+public class FrequencyModel implements Comparable<FrequencyModel> {
     private int num;
     private int sum;
 
@@ -15,5 +15,17 @@ public class FrequencyModel {
 
     public int getSum() {
         return sum;
+    }
+
+    @Override
+    public int compareTo(FrequencyModel o) {
+       if (this.sum > o.getSum()) {
+        return -1;
+    } else if (this.sum < o.getSum()) {
+        return 1;
+    }
+        return 0;
+
+
     }
 }

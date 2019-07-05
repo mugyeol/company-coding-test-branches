@@ -55,18 +55,8 @@ public class NumFrequencyActivity extends AppCompatActivity {
                 public void run() {
                     progressBar.setVisibility(View.INVISIBLE);
                     Log.d(TAG,""+arrayList.size());
-                    Collections.sort(arrayList, new Comparator<FrequencyModel>() {
-                        @Override
-                        public int compare(FrequencyModel o1, FrequencyModel o2) {
+                    Collections.sort(arrayList);
 
-                            if (o1.getSum() <o2.getSum()){
-                                return 1;
-                            }else if(o1.getSum()>o2.getSum()){
-                                return -1;
-                            }
-                            return 0;
-                        }
-                    });
                     mAdapter = new FrequencyAdapter(NumFrequencyActivity.this,arrayList);
                     recyclerView.setAdapter(mAdapter);
                     mAdapter.notifyDataSetChanged();
@@ -82,6 +72,16 @@ public class NumFrequencyActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG+"LIFECYCLE","ONDESTORY");
+        arrayList.clear();
+    }
+
+
+
     private void getNumsCalculated (Callback callback){
         for (int i=1; i<46; i++){
             Injection.provideRepositary(this).countNums(i, new LottoDataSource.GetNumCallback() {

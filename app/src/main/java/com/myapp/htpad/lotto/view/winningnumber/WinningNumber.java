@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.myapp.htpad.lotto.R;
 import com.myapp.htpad.lotto.data.LottoModel;
+import com.myapp.htpad.lotto.util.retrofit.ApiService;
+import com.myapp.htpad.lotto.util.retrofit.RetrofitClientApi;
 import com.myapp.htpad.lotto.view.splash.SplashActivity;
 
 import java.util.ArrayList;
@@ -38,11 +40,20 @@ public class WinningNumber extends AppCompatActivity {
         int drwNo = 0;
         if (data!=null) {
             String param = data.getQueryParameter("drwNo");
-            drwNo = Integer.parseInt(param);
+            if (param != null) {
+                try{
+                    drwNo = Integer.parseInt(param);
+                }catch (NumberFormatException e){
+                    //drawNo = 0 으로 pass
+                }
+                Log.d(TAG,""+drwNo);
+            }
         }
         String title = drwNo+"회차 1등 당첨 번호 입니다";
         header.setText(title);
-        SplashActivity.mApiService.getWinningData(drwNo).enqueue(new Callback<LottoModel>() {
+        ApiService apiService = RetrofitClientApi.getClient().create(ApiService.class);
+
+        apiService.getWinningData(drwNo).enqueue(new Callback<LottoModel>() {
             @Override
             public void onResponse(Call<LottoModel> call, Response<LottoModel> response) {
                 if (response.body()!=null){
