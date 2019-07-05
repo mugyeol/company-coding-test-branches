@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingMainLinear">15dp</dimen>
+    <dimen name="titleTextSize">30sp</dimen>
+    <dimen name="mainbtnmargin">20dp</dimen>
+    <dimen name="numWidthHeight">38dp</dimen>
+    <dimen name="numWidthHeight2">34dp</dimen>
+    <dimen name="numMargin">6dp</dimen>
+    <dimen name="plusSize">30sp</dimen>
+    <dimen name="splashWelcomeTitleSize">60sp</dimen>
+    <dimen name="welcomeComment">20sp</dimen>
+</resources>

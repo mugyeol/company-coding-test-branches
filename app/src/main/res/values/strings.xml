@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Lotto</string>
+    <string name="title">로또합시다</string>
+    <string name="drwNo">회차</string>
+    <string name="createNum">번호 생성</string>
+    <string name="checkWinning">당첨 조회하기</string>
+    <string name="plus">+</string>
+    <string name="checkPreviousWinningNum">지난 회차 조회</string>
+    <string name="numFrequency">번호 별 출현 횟수</string>
+    <string name="keyFirstCome">firstCome</string>
+    <string name="welcome">환영합니다</string>
+    <string name="welcomeComment">로또는 과학입니다.. 대박나세요!</string>
+    <string name="welcomOKbtntext">OK</string>
+    <string name="makesomenum">번호를 생성해 보세요 !</string>
+    <string name="nodata">NO DATA</string>
+    <string name="checkNlotto">회차 당첨 여부 조회하기</string>
+    <string name="_1_50">로또 1-50회차 당첨 번호</string>
+    <string name="responsenull">RESPONSE BODY NULL</string>
+    <string name="returnvaluefail">return value fail</string>
+    <string name="returnsuccess">success</string>
+    <string name="putmoreinput">회차를 입력해 주세요</string>
+    <string name="numfrequency">번호별 출현 횟수</string>
+</resources>

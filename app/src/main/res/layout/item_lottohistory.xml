@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="7dp"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+
+
+            <!--//회차-->
+            <TextView
+                android:text="11회차"
+                android:gravity="center"
+                android:layout_marginRight="5dp"
+                android:id="@+id/itemLottoHistorydrawNo"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:id="@+id/itemnum1"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/numMargin"
+                android:layout_width="@dimen/numWidthHeight2"
+                android:layout_height="@dimen/numWidthHeight2"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:id="@+id/itemnum2"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/numMargin"
+                android:layout_width="@dimen/numWidthHeight2"
+                android:layout_height="@dimen/numWidthHeight2"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:id="@+id/itemnum3"
+                android:layout_marginStart="@dimen/numMargin"
+                android:layout_width="@dimen/numWidthHeight2"
+                android:layout_height="@dimen/numWidthHeight2"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:id="@+id/itemnum4"
+                android:layout_marginStart="@dimen/numMargin"
+                android:layout_width="@dimen/numWidthHeight2"
+                android:layout_height="@dimen/numWidthHeight2"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:id="@+id/itemnum5"
+                android:layout_marginStart="@dimen/numMargin"
+                android:layout_width="@dimen/numWidthHeight2"
+                android:layout_height="@dimen/numWidthHeight2"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:id="@+id/itemnum6"
+                android:layout_marginStart="@dimen/numMargin"
+                android:layout_width="@dimen/numWidthHeight2"
+                android:layout_height="@dimen/numWidthHeight2"
+                />
+            <TextView
+                android:gravity="center"
+                android:layout_marginStart="@dimen/numMargin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus"
+                android:textSize="@dimen/plusSize"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:id="@+id/itemnum7"
+                android:layout_marginStart="@dimen/numMargin"
+                android:layout_width="@dimen/numWidthHeight2"
+                android:layout_height="@dimen/numWidthHeight2"
+                />
+        </LinearLayout>
+        
+        
+        
+    
+

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="@dimen/paddingMainLinear"
+    android:layout_height="match_parent"
+    tools:context=".view.main.MainActivity">
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/titleTextSize"
+        android:text="@string/title"/>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        >
+        <EditText
+            android:id="@+id/MainActivityEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/drwNo"
+            android:inputType="numberSigned"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLength="3"
+            />
+        <Button
+            android:id="@+id/MainActivityCreateBtn"
+            android:layout_marginStart="@dimen/mainbtnmargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/createNum"
+            android:layout_weight="2"
+            />
+
+
+    </LinearLayout>
+    <TextView
+        android:visibility="gone"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:id="@+id/MainActivityHintForNum"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/numWidthHeight"
+        android:text="@string/makesomenum"
+        />
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:id="@+id/MainActivityLinearNum"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/num1"
+            android:gravity="center"
+            android:layout_width="@dimen/numWidthHeight"
+            android:layout_height="@dimen/numWidthHeight"
+            />
+        <TextView
+            android:id="@+id/num2"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/numMargin"
+            android:layout_width="@dimen/numWidthHeight"
+            android:layout_height="@dimen/numWidthHeight"
+            />
+        <TextView
+            android:gravity="center"
+            android:id="@+id/num3"
+            android:layout_marginStart="@dimen/numMargin"
+            android:layout_width="@dimen/numWidthHeight"
+            android:layout_height="@dimen/numWidthHeight"
+            />
+        <TextView
+            android:gravity="center"
+            android:id="@+id/num4"
+            android:layout_marginStart="@dimen/numMargin"
+            android:layout_width="@dimen/numWidthHeight"
+            android:layout_height="@dimen/numWidthHeight"
+            />
+        <TextView
+            android:gravity="center"
+            android:id="@+id/num5"
+            android:layout_marginStart="@dimen/numMargin"
+            android:layout_width="@dimen/numWidthHeight"
+            android:layout_height="@dimen/numWidthHeight"
+            />
+        <TextView
+            android:gravity="center"
+            android:id="@+id/num6"
+            android:layout_marginStart="@dimen/numMargin"
+            android:layout_width="@dimen/numWidthHeight"
+            android:layout_height="@dimen/numWidthHeight"
+            />
+        <TextView
+            android:gravity="center"
+            android:layout_marginStart="@dimen/numMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus"
+            android:textSize="@dimen/plusSize"
+            />
+        <TextView
+            android:gravity="center"
+            android:id="@+id/num7"
+            android:layout_marginStart="@dimen/numMargin"
+            android:layout_width="@dimen/numWidthHeight"
+            android:layout_height="@dimen/numWidthHeight"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/MainActivityCheckBbtn"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkWinning"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_gravity="center"
+
+        >
+        <Button
+            android:id="@+id/MainActivityCheckHistory"
+             android:layout_weight="1"
+            android:text="@string/checkPreviousWinningNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/MainActivityNumFrequency"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:text="@string/numFrequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

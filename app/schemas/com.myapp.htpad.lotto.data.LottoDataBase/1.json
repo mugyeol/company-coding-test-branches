@@ -1,0 +1,82 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "9468233261b0ad9aafa67e8797e532b3",
+    "entities": [
+      {
+        "tableName": "lotto",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `drwNo` INTEGER NOT NULL, `drwtNo1` INTEGER NOT NULL, `drwtNo2` INTEGER NOT NULL, `drwtNo3` INTEGER NOT NULL, `drwtNo4` INTEGER NOT NULL, `drwtNo5` INTEGER NOT NULL, `drwtNo6` INTEGER NOT NULL, `bnusNo` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mId",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "drwNo",
+            "columnName": "drwNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "drwtNo1",
+            "columnName": "drwtNo1",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "drwtNo2",
+            "columnName": "drwtNo2",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "drwtNo3",
+            "columnName": "drwtNo3",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "drwtNo4",
+            "columnName": "drwtNo4",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "drwtNo5",
+            "columnName": "drwtNo5",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "drwtNo6",
+            "columnName": "drwtNo6",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bnusNo",
+            "columnName": "bnusNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9468233261b0ad9aafa67e8797e532b3')"
+    ]
+  }
+}
