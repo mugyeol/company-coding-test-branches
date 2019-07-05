@@ -91,9 +91,9 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
                                 && getneratedNums.get(4)==num5 && getneratedNums.get(5)==num6
                                 && getneratedNums.get(6)==bnus
                                 ){
-                            mView.showDialog("1등 당첨 되셨습니다.","당첨번호는 "+"\r\n"+winNum);
+                            mView.showDialog("1등에 당첨 되었습니다.","당첨번호는 "+"\r\n"+winNum);
                         }else{
-                            mView.showDialog("당첨 되지 않으셨습니다","당첨번호는 "+"\r\n"+winNum);
+                            mView.showDialog("1등에 당첨 되지 않았습니다","당첨번호는 "+"\r\n"+winNum);
                         }
 
 

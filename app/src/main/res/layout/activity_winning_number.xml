@@ -76,6 +76,7 @@
             android:textColor="@color/colorWhite"
             />
         <TextView
+            android:id="@+id/winningPlus"
             android:gravity="center"
             android:layout_marginStart="@dimen/numMargin"
             android:layout_width="wrap_content"
@@ -92,12 +93,15 @@
             android:textColor="@color/colorWhite"
             />
     </LinearLayout>
-    <androidx.appcompat.widget.AppCompatImageView
+    <TextView
         android:id="@+id/winningExit"
         android:layout_marginTop="25dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/exit"
-        android:layout_width="40dp"
-        android:layout_height="40dp" />
+        android:text="@string/exit"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

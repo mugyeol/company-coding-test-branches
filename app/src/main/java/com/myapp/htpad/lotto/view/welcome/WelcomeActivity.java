@@ -21,5 +21,6 @@ public class WelcomeActivity extends AppCompatActivity {
     @OnClick(R.id.welcomeActivityOk)
     void goMain(){
         startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }
