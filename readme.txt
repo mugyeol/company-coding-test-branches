@@ -8,6 +8,11 @@ Lotto 번호 생성 프로그램
 4. 빈출 번호 많이 나온 순서대로 조회 (현재 1~50회)
 5. deeplink (param - 회차)로 해당 회차 1등 번호 조회
 
+사용 기술 : 
+Room, Retrofit2, ButterKnife
+
+디자인 패턴 : mvc, mvp
+
 
 
 *deeplink adb shell command :
