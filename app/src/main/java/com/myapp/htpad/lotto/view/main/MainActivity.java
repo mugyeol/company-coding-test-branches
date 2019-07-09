@@ -23,6 +23,18 @@ import com.myapp.htpad.lotto.view.numfrequency.NumFrequencyActivity;
 
 import java.util.ArrayList;
 
+
+/**
+ *
+ * 메인 액티비티
+ *
+ * 1. 로또 번호 생성 & 당첨 여부 조회
+ * 2. 1-50회차 당첨 번호 조회
+ * 3. 빈출 번호 조회
+ *
+ *
+ * */
+
 public class MainActivity extends AppCompatActivity implements MainActivityContract.View{
 
     private static final String TAG = "메인액티비티" ;
@@ -47,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         ButterKnife.bind(this);
         mPresenter = new MainActivityPresenter();
         mPresenter.attachView(this);
+
         mLinearNum.setVisibility(View.INVISIBLE);
         mCheckButton.setVisibility(View.INVISIBLE);
 
@@ -134,10 +147,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         return getApplicationContext();
     }
 
-    @Override
-    public void onCheckedIfWin(boolean isWon) {
-
-    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

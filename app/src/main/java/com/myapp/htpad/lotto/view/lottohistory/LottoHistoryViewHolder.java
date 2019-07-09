@@ -51,7 +51,5 @@ class LottoHistoryViewHolder extends RecyclerView.ViewHolder {
             num6.setBackground(mActivity.getDrawable(R.drawable.round));
             num7.setText(Converter.toString(model.getBnusNo()));
             num7.setBackground(mActivity.getDrawable(R.drawable.round));
-
-
     }
 }

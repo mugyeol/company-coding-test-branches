@@ -27,6 +27,16 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+
+/**
+ *
+ * 빈출 번호 자주 출현한 번호부터 목록 보여주는 Activity
+ *
+ *
+ *
+ * */
+
+
 public class NumFrequencyActivity extends AppCompatActivity {
     private static final String TAG = "프리퀀시";
 
@@ -34,6 +44,8 @@ public class NumFrequencyActivity extends AppCompatActivity {
     private FrequencyAdapter mAdapter;
     private ArrayList<FrequencyModel> arrayList= new ArrayList<>();
     @BindView(R.id.numFrequencyPbar) ProgressBar progressBar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,16 +59,11 @@ public class NumFrequencyActivity extends AppCompatActivity {
         getNumsCalculated(new Callback() {
 
             @Override
-            public void onCountedComplete() {
-
-
+            public void onCountedComplete(ArrayList<FrequencyModel> arrayList) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     progressBar.setVisibility(View.INVISIBLE);
-                    Log.d(TAG,""+arrayList.size());
-                    Collections.sort(arrayList);
-
                     mAdapter = new FrequencyAdapter(NumFrequencyActivity.this,arrayList);
                     recyclerView.setAdapter(mAdapter);
                     mAdapter.notifyDataSetChanged();
@@ -81,8 +88,10 @@ public class NumFrequencyActivity extends AppCompatActivity {
     }
 
 
-
+ // 번호 별로 출현 횟수 frequency model에 담아서 (번호, 출현 횟수) array에 저장
+// array에 저장 완료되면 oncountedcomplete 호출 -> UI UPDATE
     private void getNumsCalculated (Callback callback){
+
         for (int i=1; i<46; i++){
             Injection.provideRepositary(this).countNums(i, new LottoDataSource.GetNumCallback() {
                 @Override
@@ -90,7 +99,8 @@ public class NumFrequencyActivity extends AppCompatActivity {
                     arrayList.add(frequencyModel);
                         Log.d(TAG,"num "+frequencyModel.getNum()+"sum : "+frequencyModel.getSum());
                     if (arrayList.size()==45){
-                        callback.onCountedComplete();
+                        Collections.sort(arrayList);
+                        callback.onCountedComplete(arrayList);
                     }
                 }
             });
@@ -98,7 +108,7 @@ public class NumFrequencyActivity extends AppCompatActivity {
     }
 
     private interface Callback{
-        void onCountedComplete();
+        void onCountedComplete(ArrayList<FrequencyModel> arrayList);
     }
 
     public class FrequencyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{

@@ -10,7 +10,6 @@ public interface MainActivityContract {
     interface View{
 
         void onCreatedNum(ArrayList<Integer> numArray, String numStr);
-        void onCheckedIfWin(boolean isWon);
         Context getContext();
         void showDialog(String title, String msg);
     }

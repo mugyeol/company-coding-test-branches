@@ -20,6 +20,12 @@ import com.myapp.htpad.lotto.util.Injection;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * 1-50회차 당첨 번호 조회 Activity
+ * */
+
+
 public class LottoHistoryActivity extends AppCompatActivity {
 
 

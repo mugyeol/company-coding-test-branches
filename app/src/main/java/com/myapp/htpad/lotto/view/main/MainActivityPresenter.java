@@ -40,8 +40,6 @@ public class MainActivityPresenter implements MainActivityContract.Presenter {
         }else{
             for (int i=0; i<7; i++){
                 int ran = (int)(Math.random()*45)+1;
-                Log.d(TAG,"ran : "+ran);
-                Log.d(TAG,"i : "+i);
                 if (i==0){
                     mNumSet.add(ran);
                 }else{

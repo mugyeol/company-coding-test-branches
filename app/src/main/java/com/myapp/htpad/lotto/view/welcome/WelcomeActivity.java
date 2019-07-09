@@ -10,6 +10,12 @@ import android.os.Bundle;
 import com.myapp.htpad.lotto.R;
 import com.myapp.htpad.lotto.view.main.MainActivity;
 
+
+/**
+ * welcome activity : 처음 앱 실행 시에만 open
+ * */
+
+
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override

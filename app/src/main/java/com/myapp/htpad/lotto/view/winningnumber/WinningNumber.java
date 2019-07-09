@@ -18,13 +18,20 @@ import com.myapp.htpad.lotto.R;
 import com.myapp.htpad.lotto.data.LottoModel;
 import com.myapp.htpad.lotto.util.retrofit.ApiService;
 import com.myapp.htpad.lotto.util.retrofit.RetrofitClientApi;
-import com.myapp.htpad.lotto.view.splash.SplashActivity;
 
 import java.util.ArrayList;
+
+
+
+/**
+ * 1등 당첨번호 조회 Activity
+ * */
+
 
 public class WinningNumber extends AppCompatActivity {
     private static final String TAG = "위닝넘버";
     private int[] mResourceSet = {R.id.wnum1,R.id.wnum2,R.id.wnum3,R.id.wnum4,R.id.wnum5,R.id.wnum6,R.id.wnum7};
+
     @BindView(R.id.winningHeader)TextView header;
     @BindView(R.id.winningExit)TextView exitbtn;
     @BindView(R.id.winningPlus)TextView plus;
@@ -35,6 +42,7 @@ public class WinningNumber extends AppCompatActivity {
         setContentView(R.layout.activity_winning_number);
         ButterKnife.bind(this);
         plus.setVisibility(View.VISIBLE);
+
 
         Uri data = getIntent().getData();
         int drwNo = 0;

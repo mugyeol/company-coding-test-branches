@@ -20,6 +20,21 @@ import com.myapp.htpad.lotto.util.retrofit.RetrofitClientApi;
 import com.myapp.htpad.lotto.view.main.MainActivity;
 import com.myapp.htpad.lotto.view.welcome.WelcomeActivity;
 
+
+
+/**
+ * splash activity
+ *
+ * 앱 처음 실행 시 :
+ * 1-50회차 당첨 번호 저장 & shared preference에 앱 실행 여부 저장
+ * welcome activity 실행
+ *
+ * 두번째 실행 부터 :
+ * main activity 실행
+ *
+ * */
+
+
 public class SplashActivity extends AppCompatActivity {
 
     private static String TAG = "스플래쉬";
