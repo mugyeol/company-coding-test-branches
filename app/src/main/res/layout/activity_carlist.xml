@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_1"
+    tools:context=".CarlistActivity">
+
+    <LinearLayout
+        android:id="@+id/carlist_linear"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/shade_bottom_1"
+        android:padding="13dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/carlist_search"
+            android:src="@drawable/ic_search_black_24dp"
+            android:layout_width="34dp"
+            android:layout_height="34dp" />
+        <EditText
+            android:textColor="@color/gray"
+            android:background="@null"
+            android:layout_marginLeft="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:hint="차량 정보를 검색하세요"
+            />
+
+
+    </LinearLayout>
+
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/carlist_recyclerview"
+    app:layout_constraintTop_toBottomOf="@id/carlist_linear"
+    android:layout_width="match_parent"
+    app:layout_constraintBottom_toTopOf="@id/carlist_view"
+    android:layout_height="0dp">
+
+</android.support.v7.widget.RecyclerView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/carlist_view"
+        android:background="@color/green"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+    <ImageView
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="19dp"
+        android:layout_width="39dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_dehaze_black_24dp"
+
+        />
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
