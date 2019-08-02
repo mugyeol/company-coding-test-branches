@@ -2,19 +2,21 @@ package com.myapp.htpad.mugyeol.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
+
+/**
+ * shared preference -> singleton
+ * **/
 public class MySharedPreference {
 
     private static MySharedPreference INSTANCE = null;
 
-    private SharedPreferences.Editor mEditor;
     private SharedPreferences mSharedPreferences;
 
 
     private MySharedPreference(Context context){
-        mSharedPreferences = context.getSharedPreferences("autologin",Context.MODE_PRIVATE);
-        mEditor = mSharedPreferences.edit();
-        mEditor.apply();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
     public static MySharedPreference getInstance(Context context){
         if (INSTANCE ==null){
@@ -22,13 +24,13 @@ public class MySharedPreference {
         }
         return INSTANCE;
     }
+
+
     public void putBoolean (String key, boolean value){
-        mEditor.putBoolean(key,value);
-        mEditor.apply();
+        mSharedPreferences.edit().putBoolean(key,value).apply();
     }
     public void putString (String key, String value){
-        mEditor.putString(key,value);
-        mEditor.apply();
+        mSharedPreferences.edit().putString(key,value).apply();
     }
     public boolean getBoolean (String key,boolean def){
        return mSharedPreferences.getBoolean(key,def);
@@ -37,8 +39,7 @@ public class MySharedPreference {
        return mSharedPreferences.getString(key,"");
     }
     public void removeToken (){
-     mEditor.clear();
-     mEditor.apply();
+        mSharedPreferences.edit().clear().apply();
     }
 
 

@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textColor="@color/black_60"
-            android:text="ID"
+            android:text="@string/id"
             />
         <EditText
             android:id="@+id/login_id"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textColor="@color/black_60"
-            android:text="Password"
+            android:text="@string/password"
             />
         <EditText
             android:id="@+id/login_password"
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="13.6sp"
                 android:textColor="@color/black_60"
-                android:text="로그인 상태 유지"
+                android:text="@string/keeplogin"
                 />
 
 
@@ -107,7 +107,7 @@
         <Button
             android:id="@+id/login_loginbtn"
             android:background="@drawable/background_1"
-            android:text="로그인"
+            android:text="@string/login"
             android:textSize="16sp"
             android:textColor="@color/white_87"
             android:layout_width="match_parent"
@@ -115,7 +115,7 @@
         <Button
             android:layout_marginTop="8dp"
             android:background="@drawable/background_border_1"
-            android:text="비밀번호 찾기"
+            android:text="@string/getpw"
             android:textSize="16sp"
             android:textColor="@color/green"
             android:layout_width="match_parent"

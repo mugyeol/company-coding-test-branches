@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Mugyeol</string>
+    <string name="hintforsearchcar">차량 정보를 검색하세요</string>
+    <string name="id">ID</string>
+    <string name="password">Password</string>
+    <string name="keeplogin">로그인 상태 유지</string>
+    <string name="login">로그인</string>
+    <string name="getpw">비밀번호 찾기</string>
+    <string name="capa">적재용량 :</string>
 </resources>

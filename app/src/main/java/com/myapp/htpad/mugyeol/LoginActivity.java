@@ -51,10 +51,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
         //저장된 토큰 있으면 자동 로그인.
-        if (!MySharedPreference.getInstance(this).getString("token").isEmpty())
-            startActivity(new Intent(LoginActivity.this,CarlistActivity.class));
+        if (!MySharedPreference.getInstance(this).getString("token").isEmpty()) {
+            startActivity(new Intent(LoginActivity.this, CarlistActivity.class));
             finish();
-
+        }
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (token!=null){
                             //자동 로그인 체크 여부 && 토큰 저장.
+                            //앱 종료시 자동 로그인 false일 경우 shared data 삭제
                             if (isChecboxClicked){
                                 MySharedPreference.getInstance(LoginActivity.this).putBoolean("boxcheck",isChecboxClicked);
                                 MySharedPreference.getInstance(LoginActivity.this).putString("token",token);
@@ -85,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<JsonObject> call, Throwable t) {
                         Log.d(TAG,"login fail "+t);
-                        Toast.makeText(LoginActivity.this, "네트워크 상태를 확인해 주세요", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "로그인에 실패 하였습니다. 다시 시도해주세요", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

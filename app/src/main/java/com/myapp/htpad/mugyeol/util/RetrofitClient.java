@@ -12,17 +12,10 @@ public class RetrofitClient {
 
     private static Retrofit retrofit = null;
 
-
-   private static Gson gson = new GsonBuilder()
-            .setLenient()
-            .create();
-
-
-   //build retrofit instance
     private static Retrofit getClient() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .addConverterFactory(GsonConverterFactory.create())
                     .baseUrl("https://mcricwiojwfb.cleancitynetworks.com/")
                     .build();
         }

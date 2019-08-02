@@ -1,13 +1,12 @@
 package com.myapp.htpad.mugyeol
 
-import com.google.gson.annotations.SerializedName
 
 class CarModel(val data:List<Data>){
 
     class Data(val description:String,
                val licenseNumber:String,
                val capacity:Int,
-               val favorite:Boolean,
+               var favorite:Boolean,
                val vehicleIdx:Int
     ): Comparable<Data>  {
 
@@ -19,7 +18,6 @@ class CarModel(val data:List<Data>){
             }
             return 0
         }
-
 
     }
 
